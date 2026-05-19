@@ -1,61 +1,71 @@
-body{
-    font-family: "poppins", sans-serif;
+body {
+    font-family: "Poppins", sans-serif;
     overflow-x: hidden;
 }
-html{
+
+html {
     scroll-behavior: smooth;
 }
-.section-padding{
+
+.section-padding {
     padding: 100px 0;
 }
-.section-header{
+
+.section-header {
     padding-bottom: 30px;
 }
-.navbar-brand{
+
+.navbar-brand {
     color: #fff !important;
     text-transform: uppercase;
     font-weight: bold;
 }
-.nav-area{
+
+.nav-area {
     background: #262626;
 }
-.navbar-nav .nav-link{
+
+.navbar-nav .nav-link {
     padding-right: 0;
     padding-left: 0;
     color: #fff !important;
     font-weight: bold;
 }
-.nav-item{
+
+.nav-item {
     color: #fff;
-    padding:  0 10px;
+    padding: 0 10px;
     text-transform: uppercase;
 }
 
-/*slider area*/
-
-.slider-area{
-    background-image: url(/multimedia/imgworkshop1.png);
-    -webkit-background-size:cover;
+.slider-area {
+    background-image: url("multimedia/imgworkshop1.png");
     background-size: cover;
     background-position: center center;
-    height: 100vh;
+    min-height: 100vh;
     color: #fff;
     position: relative;
 }
-.slider-area:before{
+
+.slider-area::before {
     content: "";
     position: absolute;
-    left: 0;
-    top: 0;
-    height: 100%;
-    width: 100%;
-    background: linear-gradient(360deg,#000,transparent);
+    inset: 0;
+    background: linear-gradient(360deg, #000, transparent);
 }
-.slider-text h1{
+
+.slider-text {
+    position: relative;
+    z-index: 1;
+    text-align: center;
+}
+
+.slider-text h1 {
     font-size: 45px;
     font-weight: bold;
 }
-.slider-text a{
+
+.slider-text a {
     padding: 10px 15px;
     background-color: #2980b9;
     color: #fff;
@@ -65,112 +75,102 @@ html{
     text-decoration: none;
     font-weight: bold;
 }
-.slider-text{
-    text-align: center;
-    padding-top: 20%;
-}
-/*about area*/
 
-.about-img img{
-    width: 65%;
-
+.about-img img,
+.single-work img {
+    width: 100%;
 }
-.item-text{
+
+.item-text {
     padding-left: 15px;
 }
-.about-img{
-    padding-right: 15px;
-    
-}
-.item-text h4{
+
+.item-text h4 {
     margin-bottom: 30px;
 }
-/*stats area*/
 
-.stats-area{
-    background-image: url(/multimedia/pexels-lukas-590022.jpg) ;
-    background-attachment: fixed;
-    -webkit-background-size:cover;
+.stats-area,
+.award-area,
+.testimonial-area {
+    background-image: url("multimedia/pexels-lukas-590022.jpg");
     background-size: cover;
     background-position: center center;
     position: relative;
     z-index: 1;
 }
 
-.stats-area:before{
+.stats-area::before,
+.award-area::before,
+.testimonial-area::before {
     content: "";
     position: absolute;
-    left: 0;
-    top: 0;
-    height: 100%;
-    width: 100%;
-    background: linear-gradient(180deg,#000,transparent);
+    inset: 0;
     z-index: -1;
 }
-.single-stats{
-    color: #020202;
+
+.stats-area::before {
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.35));
+}
+
+.award-area::before {
+    background: linear-gradient(90deg, #000, transparent);
+}
+
+.testimonial-area::before {
+    background: rgba(0, 0, 0, 0.85);
+}
+
+.single-stats {
+    color: #fff;
     text-align: center;
 }
-.single-stats i{
-    margin-bottom: 20px;
-}
-.single-stats h2{
+
+.single-stats h2 {
     font-weight: bold;
     font-size: 50px;
 }
-.single-stats p{
+
+.single-stats p,
+.single-award h2,
+.single-testi h2 {
     font-family: "Audiowide", cursive;
 }
 
-/*Services area*/
-
-.services-area{
+.services-area {
     text-align: center;
 }
-.single-service{
+
+.single-service {
     border: 1px solid #ddd;
     padding: 30px 20px;
     margin-bottom: 15px;
+    transition: 0.6s;
 }
-.single-service h2{
+
+.single-service h2 {
     margin: 15px 0;
     font-size: 20px;
     text-transform: uppercase;
     font-weight: bold;
 }
-.single-service:hover{
-    background:#262626;
+
+.single-service:hover {
+    background: #262626;
     color: #fff;
-    transition: .6s;
 }
 
-/*award area*/
-
-.award-area{
-    position: relative;
-    background-image: url(/multimedia/pexels-lukas-590022.jpg) ;
-    -webkit-background-size:cover;
-    background-size: cover;
-    background-position: center center;
-    z-index: 1;
+.award-area,
+.footer-area {
     text-align: center;
 }
-.award-area:before{
-    position: absolute;
-    content: "";
-    top: 0;
-    left: 0;
-    height: 100%;
-    width: 100%;
-    background: linear-gradient(90deg,#000,transparent);
-    z-index: -1;
-}
-.single-award h2{
+
+.single-award h2,
+.testimonial-area .section-header {
     color: #fff;
     text-transform: uppercase;
-    font-family: "Audiowide", cursive;
-} 
-.single-award a{
+}
+
+.single-award a {
     text-decoration: none;
     display: inline-block;
     background: #2980b9;
@@ -181,152 +181,105 @@ html{
     text-transform: uppercase;
 }
 
-/*portfolio area*/
-
-.single-work img{
-    width: 100%;
-}
-.single-work{
+.single-work {
     margin-bottom: 30px;
 }
-.portofolio-area .section-padding{
-    padding-bottom: 30px;
+
+.single-testi {
+    text-align: center;
+    color: #fff;
+    border: 1px solid #fff;
+    padding: 15px 40px;
 }
 
-/*testimonial area*/
-
-.testimonial-area{
-    background-image: url(/multimedia/pexels-lukas-590022.jpg) ;
-    -webkit-background-size:cover;
-    background-size: cover;
-    background-position: center center;
-    position: relative;
-    z-index: 1;
-}
-.testimonial-area:before{
-    position: absolute;
-    content: "";
-    top: 0;
-    left: 0;
-    height: 100%;
-    width: 100%;
-    background: rgba(0,0,0,.9);
-    z-index: -1;
-}
-.single-testi{
-    text-align:center ;
-}
-.img-area{
+.img-area {
     width: 100px;
     height: 100px;
     border-radius: 50%;
     overflow: hidden;
     display: inline-block;
 }
-.img-area img{
+
+.img-area img {
     width: 100%;
 }
-.single-testi{
-    text-align: center;
-    color: #fff;
-    border: 1px solid #fff;
-    padding: 15px 40px;
-}
-.testimonial-area .section-header{
-    color: #fff;
-}
-.single-testi h2{
-    font-family: "Audiowide", cursive;
-    margin: 15px 0;
-    font-size: 25px;
-}
 
-/*footer area*/
-
-.footer-area{
+.footer-area {
     background: #262626;
     padding: 30px 0;
     color: #fff;
-    text-align: center;
 }
 
-/*responsive area*/
-
-@media only screen and (min-width: 768px) and (max-width: 991px){
-    .section-header h2{
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+    .section-header h2 {
         font-size: 35px;
         font-weight: bold;
     }
-    .navbar-toggler-icon i.fa{
+
+    .navbar-toggler-icon i.fa {
         color: #fff;
     }
-    .slider-text{
-        padding-top: 60%;
-    }
-    .about-img{
-        padding-right: 0;
-        margin-top: 30px;
-    }
-    .item-text{
-        padding-left: 0;
-    }
-    .single-stats h2{
+
+    .single-stats h2 {
         font-size: 30px;
     }
-    .single-stats p{
+
+    .single-stats p {
         font-size: 14px;
     }
-    .single-testi{
+
+    .single-testi {
         margin-bottom: 15px;
     }
 }
 
-@media only screen and (max-width: 767px){
-    .section-header h2{
-        font-size: 322px;
+@media only screen and (max-width: 767px) {
+    .section-header h2 {
+        font-size: 32px;
         font-weight: bold;
     }
-    .navbar-toggler-icon i.fa{
+
+    .navbar-toggler-icon i.fa {
         color: #fff;
     }
-    .single-text h1{
-        font-size: 22px;
+
+    .slider-text h1 {
+        font-size: 30px;
     }
-    .single-text{
-        padding-top: 65%;
-    }
-    .single-text h2{
+
+    .slider-text h2 {
         font-size: 20px;
     }
-    .single-text a{
+
+    .slider-text a {
         padding: 5px 10px;
         font-size: 14px;
     }
-    .item-text{
+
+    .item-text {
         margin-top: 30px;
-    }
-    .item-text h4{
-        margin-bottom: 30px;
-        font-size: 20px;
-    }
-    .about-img{
-        padding-right: 0;
-    }
-    .item-text{
         padding-left: 0;
     }
-    .single-stats h2{
+
+    .item-text h4 {
+        font-size: 20px;
+    }
+
+    .single-stats h2 {
         font-size: 30px;
     }
-    .single-award h2{
+
+    .single-award h2 {
         font-size: 18px;
         line-height: 35px;
     }
-    .single-award a{
+
+    .single-award a {
         padding: 5px 15px;
         font-size: 14px;
     }
-    .single-testi{
+
+    .single-testi {
         padding: 15px 10px;
         margin-bottom: 15px;
     }
